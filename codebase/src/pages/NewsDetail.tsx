@@ -1,3 +1,4 @@
+import { sanitizeHtml } from "@/lib/sanitizeHtml";
 import React, { useEffect, useState, useRef } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import {
@@ -363,7 +364,7 @@ const NewsDetail: React.FC = () => {
                         </div>
                       ) : (
                         <div className="prose prose-lg max-w-none text-text py-2" style={{ lineHeight: "1.8" }}
-                          dangerouslySetInnerHTML={{ __html: block.text_content || "" }} />
+                          dangerouslySetInnerHTML={{ __html: sanitizeHtml(block.text_content) }} />
                       )}
                     </>
                   )}
@@ -374,7 +375,7 @@ const NewsDetail: React.FC = () => {
             {/* Legacy fullContent — shown only if no blocks and fullContent exists */}
             {!hasBlocks && article.fullContent && (
               <div className="prose prose-lg max-w-none text-text" style={{ lineHeight: "1.8" }}
-                dangerouslySetInnerHTML={{ __html: article.fullContent }} />
+                dangerouslySetInnerHTML={{ __html: sanitizeHtml(article.fullContent) }} />
             )}
 
             {/* Empty state for admin */}

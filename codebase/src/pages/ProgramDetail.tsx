@@ -1,3 +1,4 @@
+import { sanitizeHtml } from "@/lib/sanitizeHtml";
 import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Clock, BookOpen, Award, FileText, Edit2, X, Upload } from "lucide-react";
@@ -241,7 +242,7 @@ const ProgramDetail: React.FC = () => {
                   {program.fullContent && (
                     <div
                       className="prose prose-lg max-w-none text-text"
-                      dangerouslySetInnerHTML={{ __html: program.fullContent }}
+                      dangerouslySetInnerHTML={{ __html: sanitizeHtml(program.fullContent) }}
                       style={{ lineHeight: "1.8" }}
                     />
                   )}
