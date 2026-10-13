@@ -4,6 +4,7 @@
 codebase/dist
 !pb_migrations
 !codebase
+!README.md
 
 # PocketBase local data, uploaded records, and backups
 pb_data/
