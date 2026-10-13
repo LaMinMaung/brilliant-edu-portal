@@ -1,0 +1,17 @@
+
+# auto-generated list of expected repo contents
+/*
+codebase/dist
+!pb_migrations
+!codebase
+
+# PocketBase local data, uploaded records, and backups
+pb_data/
+pb_hooks/pb_data/
+
+# Local secrets and environment configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
